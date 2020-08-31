@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased] - Unreleased
+
+### Added
+
+- Add warn dialog for urls containing punycode
+
+### Fixed
+
+- Fix copy of labeled links
+
 ## [1.13.0-rc1] - 2020-08-13
 
 ### Changed

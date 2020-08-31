@@ -266,7 +266,9 @@ const Message = (props: {
   ) => void = event => {
     if (MenuRef.current) {
       setTextSelected(window.getSelection().toString() !== '')
-      setLink((event.target as any).href || '')
+      setLink(
+        (event.target as HTMLAnchorElement).getAttribute('x-target') || ''
+      )
       MenuRef.current.handleContextClick(event)
     }
   }
