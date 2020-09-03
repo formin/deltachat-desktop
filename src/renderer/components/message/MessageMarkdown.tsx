@@ -1,7 +1,6 @@
 import React from 'react'
 import { defaultRules, blockRegex, anyScopeRegex } from 'simple-markdown'
-import { LabeledLink, punycodeCheck, Link } from './Link'
-const { openExternal } = window.electron_functions
+import { LabeledLink, Link } from './Link'
 
 var ignoreCapture = function() {
   return {}
