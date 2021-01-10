@@ -1,7 +1,7 @@
 {
-  "name": "deltachat-desktop",
+  "name": "mailnarachat-desktop",
   "version": "1.14.1",
-  "description": "Desktop Application for delta.chat",
+  "description": "Desktop Application for mailnara chat",
   "main": "index.js",
   "scripts": {
     "install": "npm run install:submodules",
@@ -17,6 +17,7 @@
     "lint:fix-format": "eslint . --ext .js,.jsx,.ts,.tsx --fix || true && npm run fix-formatting",
     "dev": "npm run build && npm run start --",
     "start": "electron . --debug --log-debug --log-to-console --disable-http-cache --translation-watch",
+    "deploy": "electron-builder --windows nsis:x64",
     "clean": "rm -rf ./tsc-dist ./html-dist ./dist",
     "build": "npm run build:shared && npm run build:backend && npm run build:frontend && npm run build:calls",
     "build:shared": "npm run build:shared:translations && npm run build:shared:version",
@@ -49,29 +50,51 @@
     "pack:linux": "electron-builder --config ./electron-builder.json5 --linux AppImage deb",
     "pack:all": "electron-builder --config ./electron-builder.json5 --mac dmg --win nsis portable --linux AppImage deb"
   },
+  "build": {
+    "productName": "MailNaraChat",
+    "appId": "kr.co.mailnara",
+    "asar": true,
+    "protocols": {
+      "name": "mailnarachat",
+      "schemes": [
+        "mailnarachat"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./resources/installer/Icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/deltachat/deltachat-desktop.git"
+    "url": "git+ssh://git@github.com/mailnara/mailnarchat-desktop.git"
   },
   "keywords": [
-    "deltachat",
+    "mailnara chat",
     "email",
     "messaging",
     "desktop"
   ],
   "author": {
-    "name": "DeltaChat Developers",
+    "name": "mailnara Chat Developers",
     "email": "delta-systems@codespeak.net"
   },
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/deltachat/deltachat-desktop/issues"
+    "url": "https://github.com/mailnarachat/mailnarachat-desktop/issues"
   },
   "engines": {
     "node": ">=10.7.0"
   },
-  "productName": "DeltaChat",
-  "homepage": "https://delta.chat",
+  "productName": "mailnaraChat",
+  "homepage": "https://mailnara.co.kr",
   "dependencies": {
     "@blueprintjs/core": "^3.22.3",
     "@blueprintjs/select": "^3.11.2",
@@ -131,7 +154,7 @@
     "@typescript-eslint/parser": "^4.8.2",
     "depcheck": "^0.8.4",
     "electron": "6.1.9",
-    "electron-builder": "^22.6.0",
+    "electron-builder": "^22.9.1",
     "electron-devtools-installer": "^2.2.4",
     "electron-notarize": "^0.3.0",
     "electron-react-devtools": "^0.5.3",

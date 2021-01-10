@@ -79,7 +79,7 @@ export default class DCLoginController extends SplitOut {
     this._controller._dc = dc
     this._controller.credentials = credentials
 
-    this.updateDeviceChats()
+    //this.updateDeviceChats()
 
     setupNotifications(this._controller, (app as any).state.saved)
     setupUnreadBadgeCounter(this._controller)

@@ -139,7 +139,9 @@
     <string name="mute_for_one_day">하루 동안 알림 일시 끄기</string>
     <string name="mute_for_seven_days">7일 동안 알림 일시 끄기</string>
     <string name="mute_forever">영원히</string>
-
+    <string name="device_talk_explain">이 채팅 창은 메일나라 채팅 앱에서 앱 업데이트 및 사용 중 문제에 대해 알립니다.</string>
+    <string name="device_talk_welcome_message">메일나라 채팅에 오신 것을 환영합니다! 메일나라 채팅은 메신저 앱처럼 보이고 느껴지지만 메신저 서버가 존재하지 않습니다.\n메일나라 채팅은 채팅 인터페이스를 갖춘 이메일 애플리케이션입니다. 테스트를 원한다면 이메일을 보내십시오.\n\n\n메일나라 채팅은 이메일 주소만 사용하면 됩니다. \n받는 사람은 메일나라채팅을 설치하거나 웹 사이트를 방문하거나 어디서든 가입 할 필요가 없습니다. \n\n\n물론 원하는 경우 👉 https://mailnara.co.kr 로 가입 할 수 있습니다.\n</string>
+   
     <!-- get confirmations -->
     <string name="ask_leave_group">이 그룹에서 나가시겠습니까?</string>
     <string name="ask_forward">%1$s님에게 메시지를 전달할까요?</string>
@@ -229,7 +231,7 @@
     <!-- permissions -->
     <string name="perm_required_title">권한 필요</string>
     <string name="perm_continue">확인</string>
-    <string name="welcome_desktop">Delta Chat에 오신 것을 환영합니다.</string>
+    <string name="welcome_desktop">Mailnara Chat에 오신 것을 환영합니다.</string>
     <string name="global_menu_preferences_language_desktop">언어</string>
     <string name="global_menu_file_desktop">파일</string>
     <string name="global_menu_edit_desktop">편집</string>

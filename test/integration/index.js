@@ -9,7 +9,7 @@ test('app runs', async (t) => {
   const app = setup.createApp()
   await setup.waitForLoad(app, t)
   const text = await app.client.getText('.bp3-navbar-heading')
-  t.equal(text, 'Welcome to Delta Chat', 'App is loaded and welcome message is shown')
+  t.equal(text, 'Welcome to mailnara Chat', 'App is loaded and welcome message is shown')
   setup.endTest(app, t)
 })
 

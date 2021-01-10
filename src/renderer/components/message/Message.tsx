@@ -253,6 +253,7 @@ const Message = (props: {
   }
 
   // Info Message
+  
   if (message.isInfo)
     return (
       <div className='info-message' onContextMenu={showMenu}>
@@ -268,6 +269,7 @@ const Message = (props: {
         </p>
       </div>
     )
+
 
   // Normal Message
   const onContactClick = async (contact: DCContact) => {

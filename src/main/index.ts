@@ -37,7 +37,7 @@ const logHandler = createLogHandler()
 import { getLogger, setLogHandler } from '../shared/logger'
 const log = getLogger('main/index')
 setLogHandler(logHandler.log, rc)
-log.info(`Deltachat Version ${VERSION} ${GIT_REF} ${BUILD_TIMESTAMP}`)
+log.info(`mailnara chat Version ${VERSION} ${GIT_REF} ${BUILD_TIMESTAMP}`)
 process.on('exit', logHandler.end)
 
 // Report uncaught exceptions
@@ -142,7 +142,7 @@ function onReady([logins, _appReady, loadedState]: [
           )
           hideDeltaChat()
         } else {
-          log.debug("mainWindow.window.on('close') Quitting deltachat")
+          log.debug("mainWindow.window.on('close') Quitting mailnara chat")
           quit(e)
         }
       }
