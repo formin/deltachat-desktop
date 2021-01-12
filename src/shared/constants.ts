@@ -2,7 +2,7 @@ import { C } from 'deltachat-node'
 
 export const appName = 'MailNaraChat'
 export const homePageUrl = 'https://mailnara.co.kr'
-export const gitHubUrl = 'https://github.com/mailnara/mailnarachat-desktop'
+export const gitHubUrl = 'https://github.com/formin/deltachat-desktop'
 export const gitHubIssuesUrl = gitHubUrl + '/issues'
 export const gitHubLicenseUrl = gitHubUrl + '/blob/master/LICENSE'
 

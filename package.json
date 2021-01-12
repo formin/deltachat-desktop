@@ -1,6 +1,6 @@
 {
   "name": "mailnarachat-desktop",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Desktop Application for mailnara chat",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,8 @@
     "lint:fix-format": "eslint . --ext .js,.jsx,.ts,.tsx --fix || true && npm run fix-formatting",
     "dev": "npm run build && npm run start --",
     "start": "electron . --debug --log-debug --log-to-console --disable-http-cache --translation-watch",
-    "deploy": "electron-builder --windows nsis:x64",
-    "publish": "electron-builder build --win --x64 --publish always",
+    "deploy": "electron-builder --windows nsis:x64 --publish always",
+    "publish": "electron-builder build --win --x64 -p always",
     "clean": "rm -rf ./tsc-dist ./html-dist ./dist",
     "build": "npm run build:shared && npm run build:backend && npm run build:frontend && npm run build:calls",
     "build:shared": "npm run build:shared:translations && npm run build:shared:version",
@@ -55,7 +55,15 @@
   "build": {
     "productName": "MailNaraChat",
     "appId": "kr.co.mailnara",
-    "asar": true, 
+    "asar": true,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "formin",
+        "repo": "deltachat-desktop",
+        "token": "20002da865c8b5db5ff2b04894d0a1aca6d6b2f4"
+      }
+    ],
     "protocols": {
       "name": "mailnarachat",
       "schemes": [
@@ -63,6 +71,9 @@
       ]
     },
     "win": {
+      "publish": [
+        "github"
+      ],
       "target": [
         "zip",
         "nsis"
