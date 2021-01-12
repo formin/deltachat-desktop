@@ -1,0 +1,11 @@
+version: 0.1.0
+files:
+  - url: MailNaraChat-Setup-0.1.0.exe
+    sha512: ZG5C9k+m6tgLMaoCSztTy0PlEEleDLgWgVNh4aqGw7WHIpHd50x+r5NokbHiRluPgVApJ5VJbqWnq8wHG8GCQg==
+    size: 438308443
+path: MailNaraChat-Setup-0.1.0.exe
+sha512: ZG5C9k+m6tgLMaoCSztTy0PlEEleDLgWgVNh4aqGw7WHIpHd50x+r5NokbHiRluPgVApJ5VJbqWnq8wHG8GCQg==
+releaseDate: '2021-01-11T08:22:23.455Z'
+publish:
+ provider: github
+ token: 392cafce4080d6d8a70743619b90d46aba950682
