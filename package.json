@@ -1,9 +1,10 @@
 {
   "name": "mailnarachat-desktop",
-  "version": "1.14.1",
+  "version": "0.1.2",
   "description": "Desktop Application for mailnara chat",
   "main": "index.js",
   "scripts": {
+    "release": "build",
     "install": "npm run install:submodules",
     "install:submodules": "git submodule update --recursive --init",
     "test": "npm run lint && npm run check-formatting && npm run test-log-conventions && npm run test-unit",
@@ -18,6 +19,7 @@
     "dev": "npm run build && npm run start --",
     "start": "electron . --debug --log-debug --log-to-console --disable-http-cache --translation-watch",
     "deploy": "electron-builder --windows nsis:x64",
+    "publish": "electron-builder build --win --publish always",
     "clean": "rm -rf ./tsc-dist ./html-dist ./dist",
     "build": "npm run build:shared && npm run build:backend && npm run build:frontend && npm run build:calls",
     "build:shared": "npm run build:shared:translations && npm run build:shared:version",
@@ -54,6 +56,13 @@
     "productName": "MailNaraChat",
     "appId": "kr.co.mailnara",
     "asar": true,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "formin",
+        "repo": "deltachat-desktop"
+      }
+    ],
     "protocols": {
       "name": "mailnarachat",
       "schemes": [
@@ -65,7 +74,11 @@
         "zip",
         "nsis"
       ],
-      "icon": "./resources/installer/Icon.ico"
+      "icon": "./resources/installer/Icon.ico",
+      "publish": [
+        "github",
+        "bintray"
+      ]
     },
     "nsis": {
       "oneClick": false,
@@ -74,7 +87,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mailnara/mailnarchat-desktop.git"
+    "url": "https://github.com/formin/deltachat-desktop.git"
   },
   "keywords": [
     "mailnara chat",
@@ -84,11 +97,11 @@
   ],
   "author": {
     "name": "mailnara Chat Developers",
-    "email": "delta-systems@codespeak.net"
+    "email": "help@mailnara.co.kr"
   },
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/mailnarachat/mailnarachat-desktop/issues"
+    "url": "https://mailnara.co.kr"
   },
   "engines": {
     "node": ">=10.7.0"
@@ -105,6 +118,7 @@
     "classnames": "^2.2.6",
     "debounce": "^1.2.0",
     "deltachat-node": "^1.50.0",
+    "electron-updater": "^4.3.5",
     "emoji-js-clean": "^4.0.0",
     "emoji-mart": "^3.0.0",
     "emoji-regex": "^9.2.0",

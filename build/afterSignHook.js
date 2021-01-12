@@ -6,7 +6,7 @@ exports.default = async function notarizing(context) {
     //non appstore - mac os (dmg)
     const appName = context.packager.appInfo.productFilename;
     return await notarize({
-      appBundleId: 'chat.delta.desktop.electron',
+      appBundleId: 'chat.mailnara.desktop.electron',
       appPath: `${appOutDir}/${appName}.app`,
       appleApiKey: process.env.appleApiKey,
       appleApiIssuer: process.env.appleApiIssuer,

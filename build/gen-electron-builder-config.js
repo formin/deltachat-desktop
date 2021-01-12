@@ -70,7 +70,7 @@ const files = [
 const env = process.env
 
 const build = {}
-build['appId'] = 'chat.delta.desktop.electron'
+build['appId'] = 'chat.mailnara.desktop.electron'
 build['protocols'] = {
   name: 'QR code data',
   role: 'Viewer',
@@ -96,7 +96,7 @@ const PREBUILD_FILTERS = {
 }
 
 build['mac'] = {
-  appId: 'chat.delta.desktop.electron',
+  appId: 'chat.mailnara.desktop.electron',
   category: 'public.app-category.social-networking',
   entitlements: 'build/entitlements.mac.plist',
   entitlementsInherit: 'build/entitlements.mac.plist',

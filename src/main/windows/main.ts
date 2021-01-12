@@ -7,7 +7,11 @@ import { showDeltaChat } from '../tray'
 import { ExtendedAppMainProcess } from '../types'
 const log = getLogger('main/mainWindow')
 
+const autoUpdater = require('electron-updater').autoUpdater
+
 export let window: (BrowserWindow & { hidden?: boolean }) | null = null
+
+export let contents: any
 
 export function init(
   app: ExtendedAppMainProcess,
@@ -141,7 +145,39 @@ export function init(
   window.on('focus', () => {
     window.hidden = false
   })
+
+  contents = window.webContents
+  contents.openDevTools()
+  autoUpdater.checkForUpdates()
 }
+
+autoUpdater.on('update-available', function () {
+  console.log('A new update is available')
+  contents.send('updater-message', 'A new update is available')
+})
+autoUpdater.on('checking-for-update', function () {
+  console.log('Checking-for-update')
+  contents.send('updater-message', 'Checking for Update..')
+})
+autoUpdater.on('error', function (error: any) {
+  console.log('error')
+  console.error(error)
+  contents.send('updater-message', 'Got Error')
+})
+autoUpdater.on('download-progress', function (bytesPerSecond: any, percent: any, total: any, transferred: any) {
+  console.log(`${bytesPerSecond}, ${percent}, ${total}, ${transferred}`)
+  contents.send('updater-message', `download progress : ${bytesPerSecond}, ${percent}, ${total}, ${transferred}`)
+})
+autoUpdater.on('update-downloaded', function (event: any) {
+  console.log('update-downloaded')
+  console.log(event)
+  contents.send('updater-message', 'update-downloaded')
+})
+
+autoUpdater.on('update-not-available', function () {
+  console.log('update-not-available')
+  contents.send('updater-message', 'update-not-available')
+})
 
 export function hide() {
   window?.hide()

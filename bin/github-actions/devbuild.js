@@ -33,7 +33,7 @@ fs.writeFileSync(
   fs
     .readFileSync(electronBuilderConfig, 'utf-8')
     .replace(
-      "build['appId'] = 'chat.delta.desktop.electron'",
-      "build['appId'] = 'chat.delta.desktop.electron.dev'"
+      "build['appId'] = 'chat.mailnara.desktop.electron'",
+      "build['appId'] = 'chat.mailnara.desktop.electron.dev'"
     )
 )
