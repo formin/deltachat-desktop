@@ -147,36 +147,37 @@ export function init(
   })
 
   contents = window.webContents
-  //contents.openDevTools()
-  console.log('checkForUpdates')
+  contents.openDevTools()
+  log.info('checkForUpdates...')
   autoUpdater.checkForUpdates()
 }
 
 autoUpdater.on('update-available', function () {
-  console.log('A new update is available')
+  //console.log('A new update is available')
+  log.info('A new update is available')
   contents.send('updater-message', 'A new update is available')
 })
 autoUpdater.on('checking-for-update', function () {
-  console.log('Checking-for-update')
+  log.info('Checking-for-update')
   contents.send('updater-message', 'Checking for Update..')
 })
 autoUpdater.on('error', function (error: any) {
-  console.log('error')
+  log.info('error')
   console.error(error)
   contents.send('updater-message', 'Got Error')
 })
 autoUpdater.on('download-progress', function (bytesPerSecond: any, percent: any, total: any, transferred: any) {
-  console.log(`${bytesPerSecond}, ${percent}, ${total}, ${transferred}`)
+  log.info(`${bytesPerSecond}, ${percent}, ${total}, ${transferred}`)
   contents.send('updater-message', `download progress : ${bytesPerSecond}, ${percent}, ${total}, ${transferred}`)
 })
 autoUpdater.on('update-downloaded', function (event: any) {
-  console.log('update-downloaded')
+  log.info('update-downloaded')
   console.log(event)
   contents.send('updater-message', 'update-downloaded')
 })
 
 autoUpdater.on('update-not-available', function () {
-  console.log('update-not-available')
+  log.info('update-not-available')
   contents.send('updater-message', 'update-not-available')
 })
 
