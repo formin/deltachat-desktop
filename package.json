@@ -1,6 +1,6 @@
 {
   "name": "mailnarachat-desktop",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Desktop Application for mailnara chat",
   "main": "index.js",
   "scripts": {
@@ -61,7 +61,7 @@
         "provider": "github",
         "owner": "formin",
         "repo": "deltachat-desktop",
-        "token": "3278c6d63ba82a53fe47e68a39c1f9ae148e5abc"
+        "token": "95741cb4873d64a9cf4b8cd0f5fdb1bdacf429ef"
       }
     ],
     "protocols": {
