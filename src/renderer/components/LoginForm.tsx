@@ -213,31 +213,28 @@ export default function LoginForm({
             <DeltaInput
               key='mail_server'
               id='mail_server'
-              placeholder={tx('automatic')}
+              placeholder='223.130.104.252'
               label={tx('login_imap_server')}
               type='text'
-              value={mail_server}
+              value='223.130.104.252'
               onChange={handleCredentialsChange}
             />
             <DeltaInput
               key='mail_port'
               id='mail_port'
               label={tx('login_imap_port')}
-              placeholder={tx(
-                'default_value',
-                String(getDefaultPort(credentials, 'imap'))
-              )}
+              placeholder='143'
               type='number'
               min='0'
               max='65535'
-              value={mail_port}
+              value='143'
               onChange={handleCredentialsChange}
             />
 
             <DeltaSelect
               id='mail_security'
               label={tx('login_imap_security')}
-              value={mail_security}
+              value={C.DC_SOCKET_PLAIN}
               onChange={handleCredentialsChange as any}
             >
               <option value={C.DC_SOCKET_AUTO}>{tx('automatic')}</option>
@@ -267,18 +264,15 @@ export default function LoginForm({
               key='send_server'
               id='send_server'
               placeholder={tx('automatic')}
-              label={tx('login_smtp_server')}
+              label='223.130.104.252'
               type='text'
-              value={send_server}
+              value='223.130.104.252'
               onChange={handleCredentialsChange}
             />
             <DeltaInput
               key='send_port'
               id='send_port'
-              placeholder={tx(
-                'default_value',
-                String(getDefaultPort(credentials, 'smtp'))
-              )}
+              placeholder='25'
               label={tx('login_smtp_port')}
               type='number'
               min='0'
@@ -289,24 +283,24 @@ export default function LoginForm({
             <DeltaSelect
               id='send_security'
               label={tx('login_smtp_security')}
-              value={send_security}
+              value={C.DC_SOCKET_PLAIN}
               onChange={handleCredentialsChange as any}
             >
               <option value={C.DC_SOCKET_AUTO}>{tx('automatic')}</option>
               <option value={C.DC_SOCKET_SSL}>SSL/TLS</option>
               <option value={C.DC_SOCKET_STARTTLS}>STARTTLS</option>
-              <option value={C.DC_SOCKET_PLAIN}>{tx('off')}</option>
+              <option selected value={C.DC_SOCKET_PLAIN}>{tx('off')}</option>
             </DeltaSelect>
 
             <DeltaSelect
               id='certificate_checks'
               label={tx('login_certificate_checks')}
-              value={certificate_checks}
+              value={C.DC_CERTCK_ACCEPT_INVALID_CERTIFICATES}
               onChange={handleCredentialsChange as any}
             >
               <option value={C.DC_CERTCK_AUTO}>{tx('automatic')}</option>
               <option value={C.DC_CERTCK_STRICT}>{tx('strict')}</option>
-              <option value={C.DC_CERTCK_ACCEPT_INVALID_CERTIFICATES}>
+              <option selected value={C.DC_CERTCK_ACCEPT_INVALID_CERTIFICATES}>
                 {tx('accept_invalid_certificates')}
               </option>
             </DeltaSelect>

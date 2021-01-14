@@ -147,7 +147,7 @@ export function init(
   })
 
   contents = window.webContents
-  contents.openDevTools()
+  //contents.openDevTools()
   log.info('checkForUpdates...')
   autoUpdater.checkForUpdates()
 }
