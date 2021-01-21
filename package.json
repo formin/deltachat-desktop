@@ -1,6 +1,6 @@
 {
   "name": "mailnarachat-desktop",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "description": "Desktop Application for mailnara chat",
   "main": "index.js",
   "scripts": {
@@ -51,17 +51,16 @@
     "pack:linux:dir": "electron-builder --config ./electron-builder.json5 --linux --dir",
     "pack:linux": "electron-builder --config ./electron-builder.json5 --linux AppImage deb",
     "pack:all": "electron-builder --config ./electron-builder.json5 --mac dmg --win nsis portable --linux AppImage deb"
-  },
+  }, 
   "build": {
     "productName": "MailNaraChat",
     "appId": "kr.co.mailnara",
     "asar": true,
     "publish": [
       {
-        "provider": "github",
-        "owner": "formin",
-        "repo": "deltachat-desktop",
-        "token": "95741cb4873d64a9cf4b8cd0f5fdb1bdacf429ef"
+        "provider": "generic",
+        "url": "http://223.130.102.31:1337",
+        "files": "MailNaraChat.exe"        
       }
     ],
     "protocols": {
@@ -71,9 +70,6 @@
       ]
     },
     "win": {
-      "publish": [
-        "github"
-      ],
       "target": [
         "zip",
         "nsis"

@@ -7,7 +7,9 @@ import { showDeltaChat } from '../tray'
 import { ExtendedAppMainProcess } from '../types'
 const log = getLogger('main/mainWindow')
 
-const autoUpdater = require('electron-updater').autoUpdater
+import { autoUpdater } from 'electron-updater'
+
+const feed = 'http://223.130.102.31:1337/update/win64';
 
 export let window: (BrowserWindow & { hidden?: boolean }) | null = null
 
@@ -149,7 +151,14 @@ export function init(
   contents = window.webContents
   //contents.openDevTools()
   log.info('checkForUpdates...')
-  autoUpdater.checkForUpdates()
+  log.info(feed)
+  
+
+  autoUpdater.setFeedURL(feed);
+  autoUpdater.autoDownload = true;
+
+  autoUpdater.checkForUpdates();
+
 }
 
 autoUpdater.on('update-available', function () {
