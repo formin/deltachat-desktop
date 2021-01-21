@@ -59,9 +59,9 @@ export default function About(props: { isOpen: boolean; onClose: () => void }) {
 
   const desktopString = reactStringReplace(
     tx('about_offical_app_desktop'),
-    'Delta Chat',
+    'MailNara Chat',
     () => (
-      <ClickableLink href='https://delta.chat'>{'Delta Chat'}</ClickableLink>
+      <ClickableLink href='https://mailnara.co.kr'>{'MailNara Chat'}</ClickableLink>
     )
   )
   let versionString = reactStringReplace(

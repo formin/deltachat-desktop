@@ -19,7 +19,7 @@ export function getDefaultState(): AppState {
       lastChats: {},
       zoomFactor: 1,
       activeTheme: 'system',
-      minimizeToTray: false,
+      minimizeToTray: true,
     },
     logins: [],
   }

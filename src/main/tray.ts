@@ -46,11 +46,12 @@ export function quitDeltaChat() {
 
 export function updateTrayIcon() {
   // User doesn't want tray icon => destroy it
+  /*
   if (app.state.saved.minimizeToTray !== true) {
     if (tray != null) destroyTrayIcon()
     return
   }
-
+  */
   renderTrayIcon()
 }
 
@@ -153,7 +154,7 @@ export function renderTrayIcon() {
   log.info('add icon tray')
   tray = TrayIcon()
 
-  tray.setToolTip('Delta Chat')
+  tray.setToolTip('MailNara Chat')
 
   if (process.platform === 'darwin') {
     tray.on('click', () => tray.popUpContextMenu(getTrayMenu()))

@@ -1,6 +1,6 @@
 {
   "name": "mailnarachat-desktop",
-  "version": "0.1.12",
+  "version": "0.1.14",
   "description": "Desktop Application for mailnara chat",
   "main": "index.js",
   "scripts": {

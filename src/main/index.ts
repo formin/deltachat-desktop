@@ -143,7 +143,8 @@ function onReady([logins, _appReady, loadedState]: [
           hideDeltaChat()
         } else {
           log.debug("mainWindow.window.on('close') Quitting mailnara chat")
-          quit(e)
+          hideDeltaChat()
+          //quit(e)
         }
       }
     }

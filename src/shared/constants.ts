@@ -1,6 +1,6 @@
 import { C } from 'deltachat-node'
 
-export const appName = 'MailNaraChat'
+export const appName = 'MailNaraChat 0.1.14'
 export const homePageUrl = 'https://mailnara.co.kr'
 export const gitHubUrl = 'https://github.com/formin/deltachat-desktop'
 export const gitHubIssuesUrl = gitHubUrl + '/issues'
